@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- viewport: área visível do site; device-width: tamanho do disposito; inicial-scale: definição da escala de zoom inicial -->
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> <!-- bootstrap.min.css: arquivo bootstrap.css com os espaçamentos removidos; A origem pode ser alterada para local, com a desvantagem em relação às atualizações, porém, sem dependência externa alguma; integrity e crossorigin garantem a segurança em relação à utilização do bootstrap.min.css, evitando o carregamento de um arquivo modificado -->
+
+    <!-- Font Awesome https://fontawesome.com/start -->
+    <script src="https://kit.fontawesome.com/302fe8eb75.js" crossorigin="anonymous"></script> <!-- Permite a utilização de uma variedade de ícones -->
+
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <title>Cognitive</title>
+  </head>
+  <body>
+    
+    <header> <!-- Início do cabeçalho -->
+      <nav class="navbar navbar-expand-sm navbar-light"> <!-- nav: cria uma barra de navegação -->
+        <div class="container"> <!-- O conteiner é o elemento de layout mais básico no Bootstrap e necessário ao usar o sistema de grade padrão. Utiizado para conter, preencher e centralizar o conteúdo dentro deles. -->
+          <div class="initial_logo">
+	          <a href="#" class="navbar-brand"> <!-- Utiliza a configuração do Bootstrap para conteúdo do tipo logomarca -->
+	            <img src="img/cognitive.png" width="50">
+	          </a>
+	      </div>
+          <!-- Início da configuração da responsividade -->
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal"> <!-- Utiliza a configuração do Bootstrap para alternância de comportamento de navegação; collapse: recolher -->
+            <span class="navbar-toggler-icon"></span> <!-- Aplica o ícone das clássicas barras, que representam o menu -->
+          </button>
+          <!-- Fim da configuração da responsividade -->
+
+          <div class="collapse navbar-collapse" id="nav-principal"> <!-- Utiliza a configuração do Bootstrap para agrupar ou ocultar o conteúdo da barra de navegação -->
+            <ul class="navbar-nav ms-auto"> <!-- Utiliza a configuração do Bootstrap para uma navegação leve e de altura total (incluindo suporte para menus suspensos); ms: margin start, alinha à direita -->
+              <li class="nav-item">
+                <a href="" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Recursos</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Benefícios</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Preços</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="btn btn-outline-light ms-4">Entrar</a> <!-- btn-outline-light: aplica uma cor mais clara; ms (margem start): substitui o ml (margem left), alinhando à direita -->
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+    </header> <!--Fim do cabeçalho -->
+
+    <section id="home"> <!-- Início da seção home, o elemento section representa uma seção genérica contida em um documento HTML; O id home possui cores personalizadas (fundo laranja e fonte branca) em estilo.css -->
+      <div class="container"> <!-- Início do conteiner -->
+        <div class="row"> <!-- Cria uma linha -->
+          <div class="col-md-6 d-flex"> <!-- Textos da seção -->
+            <div class="align-self-center"> <!-- Centraliza o conteúdo na vertical, utilizando o flexbox -->
+              <h1 class="display-4">O ensino da maneira mais prática e fácil</h1> <!-- display: permite formatar o valor de exibição dos componentes de forma responsiva -->
+              <p>
+                A opção ideal para quem deseja estudar quando, onde e como quiser com professores em tempo real.
+              </p>
+
+              <form class="mt-4 mb-4"> <!-- mt (margin top) e mb (margin botton): definem as magens do formulário -->
+                <div class="input-group input-group-lg"> <!-- input-group: possibilita a utilização de elementos de formulário -->
+                  <input type="text" placeholder="Seu e-mail" class="form-control"> <!-- form-control: permite formatar formulário -->
+                  <div class="input-group-append"> 
+                    <button type="button" class="btn btn-primary">Cadastre-se</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div> <!-- Fim dos textos da seção -->
+          <div class="col-md-6 d-flex d-none d-md-block"> <!-- Imagem da seção; d-none: não mostra a imagem, porém; d-md-block: para telas de tamanho médio ou grande a imagem é exibida -->
+            <img src="img/cognitive.png" class="img-responsive center-block d-block mx-auto my-auto" width="350px"> <!-- Imagem transparente -->
+          </div> <!-- Fim da imagem da seção -->
+        </div> <!-- Fim da linha -->
+      </div> <!-- Fim do conteiner -->
+    </section> <!-- Fim da seção home -->
+
+    <section class="caixa"> <!--Início da seção saiba -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex">
+            <div class="align-self-center">
+              <h2>Conheça os professores</h2>
+              <p>
+                A Cognitive possui uma vasta quantidade de professores à disposição para aulas particulares, sejam virtuais ou presenciais. Como você preferir!
+              </p>
+              <a href="" class="btn btn-primary">Veja mais</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="img/teaching.png" class="img-responsive center-block d-block mx-auto my-auto">
+          </div>
+        </div>
+      </div>
+    </section> <!--Fim da seção saiba -->
+
+    <section class="caixa"> <!-- Início da seção juros -->
+      <div class="container">
+        <div class="row"> <!-- Nesta seção a imagem antecede o texto -->
+          <div class="col-md-6">
+            <img src="img/quadro.png" class="img-responsive center-block d-block mx-auto my-auto" width="512px">
+          </div>
+          <div class="col-md-6 d-flex">
+            <div class="align-self-center">
+              <h2>Aulas para todos os níveis e especializações</h2>
+              <p>
+                Assista aulas de qualquer conteúdo. Conteúdos de Ensino Fundamental, Ensino Médio, Graduação e técnicos de alto nível.
+              </p>
+              <a href="" class="btn btn-primary">Veja mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- Fim da seção juros -->
+
+    <section class="caixa"><!-- Início seção recursos -->
+      <div class="container">
+        <div class="row"> <!-- Nesta seção há 3 colunas, com imagem e texto -->
+          <div class="col-md-4">
+            <img src="img/easy-to-use.png" class="img-fluid">
+            <h4>Fácil de usar</h4>
+            <p>
+              Basta procurar por um assunto ou área, preferência de forma de ensino e buscar! O pagamento é realizado diretamente ao professor, sem complicações.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <img src="img/medal.png" class="img-fluid">
+            <h4>Professores bem avaliados</h4>
+            <p>
+            	Prezamos muito pelo seu conhecimento e, por isso, somos completamente transparentes em relação aos professores: você pode avaliá-los e pode buscar por professores com boas avaliações!
+            </p>
+          </div>
+          <div class="col-md-4 teste">
+            <img src="img/customer-service.png" class="img-fluid">
+            <h4>Suporte</h4>
+            <p>
+              Dúvidas sobre a plataforma? Perguntas? Estamos aqui para te auxiliar!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- Fim da seção recursos -->
+
+    <footer class="mt-4 mb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <p> <!-- Os espaçamentos das margens do footer p e footer a estão personalizados através do estilo.css -->
+              <a href="">Home</a>
+              <a href="">Recursos</a>
+              <a href="">Benefícios</a>
+              <a href="">Pagamento</a>
+            </p>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end"> <!-- d-flex justify-content-end: alinha os ícones na direita (fim) -->
+            <a href="" class="btn btn-outline-dark"> <!-- btn-outline-dark: ícones com borda escura -->
+              <i class="fab fa-facebook"></i> <!-- Ícone do Font Awesome (https://fontawesome.com/icons) -->
+            </a>
+            <a href="" class="btn btn-outline-dark ms-2">
+              <i class="fab fa-twitter"></i> 
+            </a>
+            <a href="" class="btn btn-outline-dark ms-2">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="btn btn-outline-dark ms-2">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <!-- É recomendável manter os códigos JavaScript abaixo, assunto que será abordado nas próximas aulas; jquery: framework para JavaScript; popper.js: engine de localização, permitindo localizar componentes-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
