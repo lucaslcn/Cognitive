@@ -1,0 +1,24 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Disciplina extends Model
+{
+    use SoftDeletes;
+
+    protected $fillable = ['idarea', 'disciplina'];
+    protected $dates = ['deleted_at'];
+
+
+    /**
+     * Get the area that owns the disciplina.
+     */
+    public function Area()
+    {
+        return $this->belongsTo('App\Area','idarea','id');
+    }
+
+}
