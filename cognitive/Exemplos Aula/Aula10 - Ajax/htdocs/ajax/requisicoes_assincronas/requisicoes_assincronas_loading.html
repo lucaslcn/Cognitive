@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Requisições assíncronas</title>
+		
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	
+		<script>
+
+			function requisitarPagina(url) {
+
+				document.getElementById('conteudo').innerHTML = '' //Limpa a div "conteudo"
+
+				//Inclusão do gif de loading na página
+				if(!document.getElementById('loading')) { //Verifica se não há um gif de loading em execução
+					let imgLoading = document.createElement('img')
+					imgLoading.id = 'loading'
+					imgLoading.src = 'loading.gif'
+					imgLoading.className = 'rounded mx-auto d-block' //Utiliza o bootstrap para formatar o gif
+
+					document.getElementById('conteudo').appendChild(imgLoading) //Inclui o gif na div de id "conteudo"
+				}
+
+				let ajax = new XMLHttpRequest();
+
+				//Requisição não iniciada, state = 0
+				//console.log(ajax.readyState)
+
+				// Método ajax.open(), responsável por configurar a url requisitada
+				ajax.open('GET', url)
+
+				//Conexão estabelecida com o servidor, state = 1
+				//console.log(ajax.readyState)
+				
+				//Fica monitorando o progresso da requisição
+				ajax.onreadystatechange = () => {
+					if(ajax.readyState == 4 && ajax.status == 200) { //State 4 = requisição finalizada; Status 200 = Ok
+						//console.log('Requisição finalizada com sucesso >>> Status 200')
+						//document.getElementById('loading').remove() //Remove o loading quando a requisição é finalizada
+						document.getElementById('conteudo').innerHTML = ajax.responseText // ajax.responseText: nele está contido o html requisitado                    
+					}
+					if(ajax.readyState == 4 && ajax.status == 404) { //State 4 = requisição finalizada; Status 404 = Not Found
+						document.getElementById('conteudo').innerHTML = ajax.responseText
+					}
+				}
+
+				ajax.send()
+				//console.log(ajax)
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<!-- Static navbar -->
+	    <nav class="navbar navbar-light bg-light mb-4">
+	      <div class="container">
+	        <div class="navbar-brand mb-0 h1">
+	        	<h3>Requisições assíncronas</h3>
+	        </div>
+	      </div>
+	    </nav>
+
+
+	    <div class="container">
+
+	    	<div class="row mb-2 d-flex justify-content-center">
+	    		<div class="col-sm-2 mb-2">
+	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_1_conteudo.php')">Página 1</a>
+	    		</div>
+	    		<div class="col-sm-2 mb-2">
+	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_2_conteudo.html')">Página 2</a>
+	    		</div>
+	    		<div class="col-sm-2 mb-2">
+	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_x_conteudo.html')">Página 3</a> <!-- Página inválida -->
+	    		</div>
+	    	</div>
+	    	
+	    	<div class="row">
+		    	<div class="col-md-1"></div>
+
+		    	<div class="col-md-10" id="conteudo"></div> <!-- Inclusão do gif neste ponto -->
+		    		
+				<div class="col-md-1"></div>
+			</div>
+
+		</div>	
+	</body>
+</html>

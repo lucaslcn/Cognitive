@@ -1,0 +1,111 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Catálogo de filmes</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		
+		<script src="xmltojson.js"></script> <!-- Inclui o script para fazer o parse de XML para JSON, código padrão -->
+		<script>
+			function getFilmes() { 
+				let xmlHttp = new XMLHttpRequest(); //Variável "xmlHttp" instanciando XMLHttpRequest
+				xmlHttp.open('GET', 'http://localhost/ajax/xml/filmes.xml') //Recurso recuperado via "get"
+
+				xmlHttp.onreadystatechange = () => {
+					if(xmlHttp.readyState == 4 && xmlHttp.status == 200) { //State 4 = requisição finalizada; Status 200 = Ok
+						let XMLFilmes = xmlHttp.responseText //Retorno da requisição
+						console.log(XMLFilmes) //Verificação dos dados retornados no console
+
+						let parser = new DOMParser() //DOMParser: classe nativa do JavaScript
+
+						domFilmes = parser.parseFromString(XMLFilmes, 'text/xml') //parseFromString: método da classe "DOMParser" que exige dois parâmetros (a string e o formato)
+
+						console.log(domFilmes) //Verificação do resultado do parse no console
+
+						jsonFilmes = xmlToJson(domFilmes) //Converte para um objeto JSON
+
+						console.log(jsonFilmes) //Verificação do objeto JSON resultante no console
+
+						for(let i in jsonFilmes['filmes']['filme']) { //Extrai a informação do JSON e atribui ao HTML de forma programática
+							let item = jsonFilmes['filmes']['filme'][i]
+
+							let divRow = document.createElement('div')
+							divRow.className = 'row'
+
+							let divCol = document.createElement('div')
+							divCol.className = 'col'
+
+							let p1 = document.createElement('p')
+							p1.innerHTML = '<strong>Título:</strong> ' + item['titulo']['#text']
+
+							let p2 = document.createElement('p')
+							p2.innerHTML = '<strong>Resumo:</strong> ' + item['resumo']['#text']
+
+							let genero = ''
+							for(let g in item.genero) {
+								if(genero) genero += ', '
+
+								genero += item.genero[g]['#text']
+							}
+
+							let p3 = document.createElement('p')
+							p3.innerHTML = '<strong>Gênero:</strong> ' + genero
+
+							let elenco = ''
+							for(let e in item.elenco.ator) {
+								if(elenco) elenco += ', '
+
+								elenco += item.elenco.ator[e]['#text']
+							}
+
+							let p4 = document.createElement('p')
+							p4.innerHTML = '<strong>Elenco:</strong> ' + elenco
+
+							let p5 = document.createElement('p')
+							p5.innerHTML = '<strong>Data de lançamento:</strong> ' + item.dataLancamento['#text'] + ' (' + item.dataLancamento['@attributes']['pais'] + ')'
+
+							let hr = document.createElement('hr')
+
+							divRow.appendChild(divCol)
+							divCol.appendChild(p1)
+							divCol.appendChild(p2)
+							divCol.appendChild(p3)
+							divCol.appendChild(p4)
+							divCol.appendChild(p5)
+							divCol.appendChild(hr)
+
+							document.getElementById('lista').appendChild(divRow) //Injeta o HTML programático no id "lista"
+
+						}
+
+					}
+
+					if(xmlHttp.readyState == 4 && xmlHttp.status == 404) { //State 4 = requisição finalizada; Status 404 = Not Found
+						//..
+					}
+				}
+
+				xmlHttp.send() //Recuperar o objeto e disparar através do "send" o request
+			}
+		</script>
+	</head>
+	<body>
+		
+		<nav class="navbar navbar-light bg-light mb-4">
+			<div class="container">
+				<div class="navbar-brand mb-0 h1">
+					<h3>Catálogo de filmes</h3>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container" id="lista"> <!-- Injeta o HTML programático no id "lista" -->
+			<div class="row mb-5">
+				<div class="col">
+					<button type="button" class="btn btn-success" onclick="getFilmes()">Listar filmes</button> <!-- Dispara a função "getFilmes" -->
+				</div>
+			</div>
+
+			
+		</div>
+	</body>
+</html>
