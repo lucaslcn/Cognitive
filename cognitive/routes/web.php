@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('area', 'AreaController');
 Route::resource('disciplina', 'DisciplinaController');
+Route::resource('estado', 'EstadoController');
+Route::resource('cidade', 'CidadeController');

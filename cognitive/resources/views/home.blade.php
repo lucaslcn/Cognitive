@@ -88,7 +88,8 @@
             <div class="row">
                 <div class="links">
                     <a href="{{ route('area.index') }}">Áreas</a>
-                    <a href="{{ route('disciplina.index') }}">Disciplinas</a>                     
+                    <a href="{{ route('disciplina.index') }}">Disciplinas</a>
+                    <a href="{{ route('estado.index') }}">Estados</a>                       
                 </div>
             </div>
         </div>
