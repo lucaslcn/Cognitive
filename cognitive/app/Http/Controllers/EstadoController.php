@@ -63,7 +63,7 @@ class EstadoController extends Controller
         Estado::findOrFail($estado);
         
         //retorna view passando a(s) variavel(is)
-        return view('estado.show', compact('estado','UF'));
+        return view('estado.show', compact('estado'));
     }
 
     /**

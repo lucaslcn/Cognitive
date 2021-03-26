@@ -28,7 +28,7 @@
         @foreach ($estado as $estados)
         <tr>
             <td><b>{{$estados->id}}</b></td>
-            <td><b>{{$estados->estados}}</b></td>
+            <td><b>{{$estados->estado}}</b></td>
             <td><b>{{$estados->UF}}</b></td>
             <td>
                 <form action="{{ route('estado.destroy', $estados->id) }}" method="post">

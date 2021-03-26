@@ -68,7 +68,7 @@ class CidadeController extends Controller
         $estado = Estado::find($cidade->idestado);
         
         //retorna view passando a(s) variavel(is)
-        return view('cidade.show', compact('cidade', 'cep', 'estado'));
+        return view('cidade.show', compact('cidade'));
     }
 
     /**
