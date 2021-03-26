@@ -29,7 +29,7 @@
               <label for="estado">Estado:</label>
               <input type="text" class="form-control" name="estado" value="{{$estado->estado}}"/>
               <label for="estado">UF:</label>
-              <input type="text" class="form-control" name="uf" value="{{$estado->uf}}"/>
+              <input type="text" class="form-control" name="UF" value="{{$estado->UF}}"/>
           </div>
           <a href="{{route('estado.index')}}" class="btn btn-sm btn-success">Voltar</a>
           <button type="submit" class="btn btn-primary">Atualizar Cadastro</button>

@@ -30,8 +30,8 @@
           </div>
 
           <div class="form-group">
-              <label for="uf">UF:</label>
-              <input type="text" class="form-control" name="uf"/>
+              <label for="UF">UF:</label>
+              <input type="text" class="form-control" name="UF"/>
           </div>
           <a href="{{route('estado.index')}}" class="btn btn-sm btn-success">Voltar</a>
           <button type="submit" class="btn btn-primary">Enviar</button>

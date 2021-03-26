@@ -29,7 +29,7 @@
         <tr>
             <td><b>{{$estados->id}}</b></td>
             <td><b>{{$estados->estados}}</b></td>
-            <td><b>{{$estados->uf}}</b></td>
+            <td><b>{{$estados->UF}}</b></td>
             <td>
                 <form action="{{ route('estado.destroy', $estados->id) }}" method="post">
                     <a class="btn btn-sm btn-success" href="{{ route('estado.show', $estados->id) }}">Exibir</a>

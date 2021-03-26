@@ -9,16 +9,16 @@ class Cidade extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['idcidade', 'cidade'];
+    protected $fillable = ['idestado', 'cidade', 'cep'];
     protected $dates = ['deleted_at'];
 
 
     /**
      * Get the area that owns the disciplina.
      */
-    public function Cidade()
+    public function Estado()
     {
-        return $this->belongsTo('App\Cidade','idcidade','id');
+        return $this->belongsTo('App\Estado','idestado','id');
     }
 
 }

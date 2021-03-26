@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Area' => $baseDir . '/app/Area.php',
+    'App\\Disciplina' => $baseDir . '/app/Disciplina.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Disciplina' => $baseDir . '/app/Disciplina.php',
     'App\\Disciplina' => $baseDir . '/app/Estado.php',
