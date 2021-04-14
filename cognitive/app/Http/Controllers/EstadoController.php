@@ -44,7 +44,7 @@ class EstadoController extends Controller
     {
         $validatedData = $request->validate([
             'estado' => 'required',
-            'UF' => 'required'
+            'UF' => 'required|min:2|max:2'
         ]);
 
         $estado = Estado::create($validatedData);
@@ -90,7 +90,7 @@ class EstadoController extends Controller
     {
         $validatedData = $request->validate([
             'estado' => 'required',
-            'UF' => 'required'
+            'UF' => 'required|min:2|max:2'
         ]);
 
         Estado::whereId($estado->id)->update($validatedData);

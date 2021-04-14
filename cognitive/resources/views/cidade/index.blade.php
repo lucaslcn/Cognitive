@@ -31,6 +31,7 @@
         <tr>
             <td><b>{{$cidade->id}}</b></td>
             <td><b>{{$cidade->idestado}}</b></td>
+            <td><b></b></td>
             <td><b>{{$cidade->cidade}}</b></td>
             <td><b>{{$cidade->cep}}</b></td>
             <td>
