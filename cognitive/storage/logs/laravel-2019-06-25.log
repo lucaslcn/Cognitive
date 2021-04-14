@@ -1,0 +1,15 @@
+[2019-06-25 02:04:39] local.ERROR: The "--status" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--status\" option does not exist. at D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\vendor\\symfony\\console\\Input\\ArgvInput.php:218)
+[stacktrace]
+#0 D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\vendor\\symfony\\console\\Input\\ArgvInput.php(154): Symfony\\Component\\Console\\Input\\ArgvInput->addLongOption('status', NULL)
+#1 D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\vendor\\symfony\\console\\Input\\ArgvInput.php(82): Symfony\\Component\\Console\\Input\\ArgvInput->parseLongOption('--status')
+#2 D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\vendor\\symfony\\console\\Input\\Input.php(55): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#3 D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\vendor\\symfony\\console\\Command\\Command.php(214): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#4 D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#5 D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\vendor\\symfony\\console\\Application.php(908): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\vendor\\symfony\\console\\Application.php(269): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\vendor\\symfony\\console\\Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 D:\\Users\\TI\\Documents\\Uniagro\\Projetos-Laravel\\mecanica\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 {main}
+"} 
