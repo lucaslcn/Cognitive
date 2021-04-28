@@ -90,6 +90,7 @@ class ComposerStaticInitd66623e411f6ccf50a9939b80402d186
         ),
         'O' => 
         array (
+            'OwenIt\\Auditing\\' => 16,
             'Opis\\Closure\\' => 13,
         ),
         'N' => 
@@ -307,6 +308,10 @@ class ComposerStaticInitd66623e411f6ccf50a9939b80402d186
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'OwenIt\\Auditing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/owen-it/laravel-auditing/src',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -416,8 +421,10 @@ class ComposerStaticInitd66623e411f6ccf50a9939b80402d186
 
     public static $classMap = array (
         'App\\Area' => __DIR__ . '/../..' . '/app/Area.php',
+        'App\\Cidade' => __DIR__ . '/../..' . '/app/Cidade.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Disciplina' => __DIR__ . '/../..' . '/app/Disciplina.php',
+        'App\\Estado' => __DIR__ . '/../..' . '/app/Estado.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AreaController' => __DIR__ . '/../..' . '/app/Http/Controllers/AreaController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -425,8 +432,10 @@ class ComposerStaticInitd66623e411f6ccf50a9939b80402d186
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\CidadeController' => __DIR__ . '/../..' . '/app/Http/Controllers/CidadeController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DisciplinaController' => __DIR__ . '/../..' . '/app/Http/Controllers/DisciplinaController.php',
+        'App\\Http\\Controllers\\EstadoController' => __DIR__ . '/../..' . '/app/Http/Controllers/EstadoController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -2322,6 +2331,37 @@ class ComposerStaticInitd66623e411f6ccf50a9939b80402d186
         'Opis\\Closure\\SecurityProvider' => __DIR__ . '/..' . '/opis/closure/src/SecurityProvider.php',
         'Opis\\Closure\\SelfReference' => __DIR__ . '/..' . '/opis/closure/src/SelfReference.php',
         'Opis\\Closure\\SerializableClosure' => __DIR__ . '/..' . '/opis/closure/src/SerializableClosure.php',
+        'OwenIt\\Auditing\\Audit' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Audit.php',
+        'OwenIt\\Auditing\\Auditable' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Auditable.php',
+        'OwenIt\\Auditing\\AuditableObserver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/AuditableObserver.php',
+        'OwenIt\\Auditing\\AuditingServiceProvider' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/AuditingServiceProvider.php',
+        'OwenIt\\Auditing\\Auditor' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Auditor.php',
+        'OwenIt\\Auditing\\Console\\AuditDriverMakeCommand' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Console/AuditDriverMakeCommand.php',
+        'OwenIt\\Auditing\\Contracts\\AttributeEncoder' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/AttributeEncoder.php',
+        'OwenIt\\Auditing\\Contracts\\AttributeModifier' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/AttributeModifier.php',
+        'OwenIt\\Auditing\\Contracts\\AttributeRedactor' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/AttributeRedactor.php',
+        'OwenIt\\Auditing\\Contracts\\Audit' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/Audit.php',
+        'OwenIt\\Auditing\\Contracts\\AuditDriver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/AuditDriver.php',
+        'OwenIt\\Auditing\\Contracts\\Auditable' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/Auditable.php',
+        'OwenIt\\Auditing\\Contracts\\Auditor' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/Auditor.php',
+        'OwenIt\\Auditing\\Contracts\\IpAddressResolver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/IpAddressResolver.php',
+        'OwenIt\\Auditing\\Contracts\\UrlResolver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/UrlResolver.php',
+        'OwenIt\\Auditing\\Contracts\\UserAgentResolver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/UserAgentResolver.php',
+        'OwenIt\\Auditing\\Contracts\\UserResolver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/UserResolver.php',
+        'OwenIt\\Auditing\\Drivers\\Database' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Drivers/Database.php',
+        'OwenIt\\Auditing\\Encoders\\Base64Encoder' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Encoders/Base64Encoder.php',
+        'OwenIt\\Auditing\\Events\\Audited' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Events/Audited.php',
+        'OwenIt\\Auditing\\Events\\Auditing' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Events/Auditing.php',
+        'OwenIt\\Auditing\\Exceptions\\AuditableTransitionException' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Exceptions/AuditableTransitionException.php',
+        'OwenIt\\Auditing\\Exceptions\\AuditingException' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Exceptions/AuditingException.php',
+        'OwenIt\\Auditing\\Facades\\Auditor' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Facades/Auditor.php',
+        'OwenIt\\Auditing\\Models\\Audit' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Models/Audit.php',
+        'OwenIt\\Auditing\\Redactors\\LeftRedactor' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Redactors/LeftRedactor.php',
+        'OwenIt\\Auditing\\Redactors\\RightRedactor' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Redactors/RightRedactor.php',
+        'OwenIt\\Auditing\\Resolvers\\IpAddressResolver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Resolvers/IpAddressResolver.php',
+        'OwenIt\\Auditing\\Resolvers\\UrlResolver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Resolvers/UrlResolver.php',
+        'OwenIt\\Auditing\\Resolvers\\UserAgentResolver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Resolvers/UserAgentResolver.php',
+        'OwenIt\\Auditing\\Resolvers\\UserResolver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Resolvers/UserResolver.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/AssertionFailedError.php',

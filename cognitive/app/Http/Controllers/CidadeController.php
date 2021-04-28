@@ -101,8 +101,9 @@ class CidadeController extends Controller
             'cidade' => 'required',
             'cep' => 'required'
         ]);
-
-        Cidade::whereId($cidade->id)->update($validatedData);
+        
+        $dados = Cidade::findOrFail($cidade->id);
+        $dados->update($validatedData);
 
         return redirect()->route('cidade.index')->with('success', 'Cadastro atualizado com sucesso!');
     }

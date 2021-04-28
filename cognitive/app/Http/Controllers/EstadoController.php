@@ -93,7 +93,8 @@ class EstadoController extends Controller
             'UF' => 'required|min:2|max:2'
         ]);
 
-        Estado::whereId($estado->id)->update($validatedData);
+        $dados = Estado::findOrFail($estado->id);
+        $dados->update($validatedData);
 
         return redirect()->route('estado.index')->with('success', 'Cadastro atualizado com sucesso!');
     }

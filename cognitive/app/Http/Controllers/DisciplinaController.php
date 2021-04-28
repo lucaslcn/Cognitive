@@ -100,7 +100,8 @@ class DisciplinaController extends Controller
             'disciplina' => 'required',
         ]);
 
-        Disciplina::whereId($disciplina->id)->update($validatedData);
+        $dados = Disciplina::findOrFail($disciplina->id);
+        $dados->update($validatedData);
 
         return redirect()->route('disciplina.index')->with('success', 'Cadastro atualizado com sucesso!');
     }

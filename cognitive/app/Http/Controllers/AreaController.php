@@ -89,7 +89,10 @@ class AreaController extends Controller
             'area' => 'required',
         ]);
 
-        Area::whereId($area->id)->update($validatedData);
+        //Area::whereId($area->id)->update($validatedData);
+        
+        $dados = Area::findOrFail($area->id);
+        $dados->update($validatedData);
 
         return redirect()->route('area.index')->with('success', 'Cadastro atualizado com sucesso!');
     }
