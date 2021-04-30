@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Cognitive'),
 
     /*
     |--------------------------------------------------------------------------
@@ -40,7 +40,8 @@ return [
     */
 
     'debug' => env('APP_DEBUG', true),
-
+    'log_max_files' => 30,
+    'log_level' => env('APP_LOG_LEVEL', 'error'),
     /*
     |--------------------------------------------------------------------------
     | Application URL
