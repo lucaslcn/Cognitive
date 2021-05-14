@@ -18,9 +18,9 @@ class CidadeController extends Controller
     public function index()
     {
         //exibe em ordem decrescente
-        //$cidades = Cidade::latest()->paginate(5);
-
         $cidades = Cidade::paginate(5);
+        
+        //$cidades = Cidade::with('estado')->get();
         return view('cidade.index', compact('cidades'))->with('i', (request()->input('page',1)-1)*5);
     }
 
@@ -67,8 +67,11 @@ class CidadeController extends Controller
         //procura por estado baseado no idestado (codigo para isto fica na model cidade)
         $estado = Estado::find($cidade->idestado);
         
+        //Busca todas auditorias associadas
+        $audits = $cidade->audits;
+
         //retorna view passando a(s) variavel(is)
-        return view('cidade.show', compact('cidade'));
+        return view('cidade.show', compact('cidade', 'estado', 'audits'));
     }
 
     /**
@@ -84,7 +87,7 @@ class CidadeController extends Controller
 
         $estados = Estado::paginate()->sortBy('estado');
 
-        return view('cidade.edit', compact('cidade', 'cep', 'estado'))->with('estados', $estados);
+        return view('cidade.edit', compact('cidade', 'estado'))->with('estados', $estados);
     }
 
     /**

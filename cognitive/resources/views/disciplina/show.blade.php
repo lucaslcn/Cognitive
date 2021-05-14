@@ -35,5 +35,26 @@
             <a href="{{route('disciplina.index')}}" class="btn btn-sm btn-success">Voltar</a>
         </div>
     </div>
+    
+    <div class="card-header">
+        Auditoria
+    </div>
+    <div>
+        <ul>
+            @forelse ($audits as $audit)
+            <li>
+                @lang('auditoria_disciplina.updated.metadata', $audit->getMetadata())
+                
+                @foreach ($audit->getModified() as $attribute => $modified)
+                <ul>
+                    <li>@lang('auditoria_disciplina.'.$audit->event.'.modified.'.$attribute, $modified)</li>
+                </ul>
+                @endforeach
+            </li>
+            @empty
+            <p>@lang('auditoria_disciplina.unavailable_audits')</p>
+            @endforelse
+        </ul>
+    </div>
 </div>
 @endsection

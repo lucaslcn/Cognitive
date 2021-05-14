@@ -20,7 +20,7 @@ class Cidade extends Model implements Auditable
      */
     public function Estado()
     {
-        return $this->belongsTo('App\Estado','idestado','id');
+        return $this->belongsTo(Estado::class, 'idestado', 'id');
     }
 
 }

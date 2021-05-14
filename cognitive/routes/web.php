@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('audits', 'AuditoriaController@index')->name('audits');
+
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('logs');
+
 Route::resource('area', 'AreaController');
 Route::resource('disciplina', 'DisciplinaController');
 Route::resource('estado', 'EstadoController');

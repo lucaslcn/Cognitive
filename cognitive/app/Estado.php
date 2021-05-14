@@ -14,9 +14,9 @@ class Estado extends Model implements Auditable
     protected $fillable = ['estado', 'UF'];
     protected $dates = ['deleted_at'];
 
-    public function Disciplina()
+    public function Cidade()
     {
-        return $this->hasMany('App\Cidades', 'idcidade', 'id');
+        return $this->hasMany(Cidade::class, 'idestado', 'id');
     }
 
 }

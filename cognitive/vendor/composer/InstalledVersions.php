@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '7188753b8fcbfc96e01ec6d10d87dae74b8b2d1e',
+    'reference' => '168160e700b33fcb626f3b87bf6c3ab8a93fd992',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -390,7 +390,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '7188753b8fcbfc96e01ec6d10d87dae74b8b2d1e',
+      'reference' => '168160e700b33fcb626f3b87bf6c3ab8a93fd992',
     ),
     'laravel/tinker' => 
     array (
@@ -698,6 +698,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '7e1633a6964b48589b142d60542f9ed31bd37a92',
+    ),
+    'rap2hpoutre/laravel-log-viewer' => 
+    array (
+      'pretty_version' => 'v1.7.0',
+      'version' => '1.7.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '27392d29234b6ff38a456454558f4bcc40cc837a',
     ),
     'rhumsaa/uuid' => 
     array (

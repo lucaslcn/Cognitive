@@ -61,9 +61,12 @@ class EstadoController extends Controller
     public function show(Estado $estado)
     {
         Estado::findOrFail($estado);
+
+        //Busca todas auditorias associadas
+        $audits = $estado->audits;
         
         //retorna view passando a(s) variavel(is)
-        return view('estado.show', compact('estado'));
+        return view('estado.show', compact('estado', 'audits'));
     }
 
     /**

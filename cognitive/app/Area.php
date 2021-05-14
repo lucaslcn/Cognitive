@@ -19,6 +19,6 @@ class Area extends Model implements Auditable
      */
     public function Disciplina()
     {
-        return $this->hasMany('App\Disciplina', 'idarea', 'id');
+        return $this->hasMany(Disciplina::class, 'idarea', 'id');
     }
 }

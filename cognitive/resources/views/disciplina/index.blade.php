@@ -20,16 +20,18 @@
     <table class="table table-hover table-sm">
         <tr>
             <th><b>ID</b></th>
-            <th><b>ID Área</b></th>
             <th><b>Disciplina</b></th>
+            <th><b>ID Área</b></th>
+            <th><b>Área</b></th>
             <th><b>Ação</b></th>
         </tr>
 
         @foreach ($disciplinas as $disciplina)
         <tr>
             <td><b>{{$disciplina->id}}</b></td>
-            <td><b>{{$disciplina->idarea}}</b></td>
             <td><b>{{$disciplina->disciplina}}</b></td>
+            <td><b>{{$disciplina->idarea}}</b></td>
+            <td><b>{{$disciplina->area->area}}</b></td>
             <td>
                 <form action="{{ route('disciplina.destroy', $disciplina->id) }}" method="post">
                     <a class="btn btn-sm btn-success" href="{{ route('disciplina.show', $disciplina->id) }}">Exibir</a>

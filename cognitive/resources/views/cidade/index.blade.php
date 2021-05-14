@@ -20,20 +20,20 @@
     <table class="table table-hover table-sm">
         <tr>
             <th><b>ID</b></th>
-            <th><b>ID Estado</b></th>
-            <th><b>Nome Estado</b></th>
             <th><b>Cidade</b></th>
             <th><b>CEP</b></th>
+            <th><b>ID Estado</b></th>
+            <th><b>Nome Estado</b></th>
             <th><b>Ação</b></th>
         </tr>
 
         @foreach ($cidades as $cidade)
         <tr>
             <td><b>{{$cidade->id}}</b></td>
-            <td><b>{{$cidade->idestado}}</b></td>
-            <td><b></b></td>
             <td><b>{{$cidade->cidade}}</b></td>
             <td><b>{{$cidade->cep}}</b></td>
+            <td><b>{{$cidade->idestado}}</b></td>
+            <td><b>{{$cidade->estado->estado}}</b></td>
             <td>
                 <form action="{{ route('cidade.destroy', $cidade->id) }}" method="post">
                     <a class="btn btn-sm btn-success" href="{{ route('cidade.show', $cidade->id) }}">Exibir</a>

@@ -35,5 +35,27 @@
             <a href="{{route('cidade.index')}}" class="btn btn-sm btn-success">Voltar</a>
         </div>
     </div>
+
+    
+    <div class="card-header">
+        Auditoria
+    </div>
+    <div>
+        <ul>
+            @forelse ($audits as $audit)
+            <li>
+                @lang('auditoria_cidade.updated.metadata', $audit->getMetadata())
+                
+                @foreach ($audit->getModified() as $attribute => $modified)
+                <ul>
+                    <li>@lang('auditoria_cidade.'.$audit->event.'.modified.'.$attribute, $modified)</li>
+                </ul>
+                @endforeach
+            </li>
+            @empty
+            <p>@lang('auditoria_cidade.unavailable_audits')</p>
+            @endforelse
+        </ul>
+    </div>
 </div>
 @endsection

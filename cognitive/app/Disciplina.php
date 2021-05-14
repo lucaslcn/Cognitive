@@ -20,7 +20,7 @@ class Disciplina extends Model implements Auditable
      */
     public function Area()
     {
-        return $this->belongsTo('App\Area','idarea','id');
+        return $this->belongsTo(Area::class,'idarea','id');
     }
 
 }

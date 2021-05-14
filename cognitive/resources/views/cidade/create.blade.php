@@ -45,7 +45,7 @@
 
           <div class="row">
             <div class="form-group col-md-3">
-                <label for="cidade">CEP</label>
+                <label for="cep">CEP</label>
                 <input type="text" class="form-control" name="cep"/>
             </div>
           </div>

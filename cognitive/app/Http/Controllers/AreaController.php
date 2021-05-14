@@ -60,7 +60,10 @@ class AreaController extends Controller
     {
         $p = Area::findOrFail($area);
 
-        return view('area.show', compact('area'));
+        //Busca todas auditorias associadas
+        $audits = $area->audits;
+
+        return view('area.show', compact('area', 'audits'));
     }
 
     /**
