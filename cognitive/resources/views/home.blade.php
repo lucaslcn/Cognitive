@@ -68,39 +68,60 @@
         @if (Route::has('login'))
         <div class="top-right links">
             @auth
-            <a href="{{ url('/home') }}">Home</a>
-            @else
-            <a href="{{ route('login') }}">Login</a>
-            
-            @if (Route::has('register'))
-            <a href="{{ route('register') }}">Registrar</a>
-            @endif
-            @endauth
-        </div>
-        @endif
+            {{-- <a href="{{ url('/home') }}">Home</a> --}}
+            <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+        </a>
         
-        <div class="content">
-            <div class="title m-b-md">
-                Cognitive
-            </div>
-            
-            
-            <div class="row">
-                <div class="links">
-                    <a href="{{ route('area.index') }}">Áreas</a>
-                    <a href="{{ route('disciplina.index') }}">Disciplinas</a>
-                    <a href="{{ route('estado.index') }}">Estados</a>
-                    <a href="{{ route('cidade.index') }}">Cidades</a>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="links">
-                    <a href="{{ route('audits') }}">Auditoria</a>
-                    <a href="{{ route('logs') }}">Logs</a>
-                </div>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        @else
+        <a href="{{ route('login') }}">Login</a>
+        
+        @if (Route::has('register'))
+        <a href="{{ route('register') }}">Registrar</a>
+        @endif
+        @endauth
+    </div>
+    @endif
+    
+    <div class="content">
+        <div class="title m-b-md">
+            Cognitive
+        </div>
+        
+        @role('professor')
+        <p>Agenda</p>
+        @endrole
+        
+        
+        @role('aluno')
+        <p>Buscar professores</p>
+        @endrole
+        
+        
+        @role('admin')
+        <div class="row">
+            <div class="links">
+                <a href="{{ route('area.index') }}">Áreas</a>
+                <a href="{{ route('disciplina.index') }}">Disciplinas</a>
+                <a href="{{ route('estado.index') }}">Estados</a>
+                <a href="{{ route('cidade.index') }}">Cidades</a>
             </div>
         </div>
+        <br>
+        
+        <div class="row">
+            <div class="links">
+                <a href="{{ route('audits') }}">Auditoria</a>
+                <a href="{{ route('logs') }}">Logs</a>
+            </div>
+        </div>
+        @endrole
     </div>
+</div>
 </body>
 </html>

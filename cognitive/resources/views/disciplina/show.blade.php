@@ -36,6 +36,7 @@
         </div>
     </div>
     
+    @role('admin')
     <div class="card-header">
         Auditoria
     </div>
@@ -56,5 +57,6 @@
             @endforelse
         </ul>
     </div>
+    @endrole
 </div>
 @endsection
