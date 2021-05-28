@@ -88,6 +88,7 @@
                 <div class="links">
                     <a href="{{ route('area.index') }}">Áreas</a>
                     <a href="{{ route('disciplina.index') }}">Disciplinas</a>   
+                    <a href="{{ route('turma.index') }}">Turmas</a>
                     <a href="{{ route('estado.index') }}">Estados</a>    
                     <a href="{{ route('cidade.index') }}">Cidades</a>                         
                 </div>
