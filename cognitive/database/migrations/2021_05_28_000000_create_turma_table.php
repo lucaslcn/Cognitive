@@ -17,7 +17,7 @@ class CreateTurmaTable extends Migration
             $table->bigIncrements('id');
             $table->integer('iddisciplina');
             $table->integer('idprofessor');
-            $table->integer('idaluno');
+            $table->integer('idaluno')->nullable();
             $table->string('turma',100);
             $table->timestamps();
             $table->softdeletes();

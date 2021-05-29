@@ -22,6 +22,8 @@
                 <label for="disciplina">Disciplina:</label>
                 <input type="text" class="form-control" name="disciplina" readonly value="{{$disciplina->disciplina}}"/>
             </div>
+        </div>
+        <div class="row">
             <div class="form-group col-md-1">
                 <label for="idturma">ID Turma:</label>
                 <input type="text" class="form-control" name="idturma" readonly value="{{$turma->id}}"/>
@@ -29,6 +31,16 @@
             <div class="form-group col-md-3">
                 <label for="turma">Turma:</label>
                 <input type="text" class="form-control" name="turma" readonly value="{{$turma->turma}}"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-1">
+                <label for="idprofessor">ID Professor:</label>
+                <input type="text" class="form-control" name="idprofessor" readonly value="{{$turma->idprofessor}}"/>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="professor">Professor:</label>
+                <input type="text" class="form-control" name="professor" readonly value="{{$turma->professor->name}}"/>
             </div>
         </div>
         <div class="row">

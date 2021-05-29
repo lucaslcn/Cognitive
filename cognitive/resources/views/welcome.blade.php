@@ -82,24 +82,6 @@
             <div class="title m-b-md">
                 Cognitive
             </div>
-            
-            
-            <div class="row">
-                <div class="links">
-                    <a href="{{ route('area.index') }}">Áreas</a>
-                    <a href="{{ route('disciplina.index') }}">Disciplinas</a>   
-                    <a href="{{ route('turma.index') }}">Turmas</a>
-                    <a href="{{ route('estado.index') }}">Estados</a>    
-                    <a href="{{ route('cidade.index') }}">Cidades</a>                         
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="links">
-                    <a href="{{ route('audits') }}">Auditoria</a>
-                    <a href="{{ route('logs') }}">Logs</a>                    
-                </div>
-            </div>
         </div>
     </div>
 </body>

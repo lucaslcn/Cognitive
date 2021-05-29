@@ -21,8 +21,8 @@
         <tr>
             <th><b>ID</b></th>
             <th><b>Turma</b></th>
-            <th><b>Professor</b></th>
             <th><b>ID Professor</b></th>
+            <th><b>Professor</b></th>
             <th><b>Ação</b></th>
         </tr>
 
@@ -30,8 +30,8 @@
         <tr>
             <td><b>{{$turma->id}}</b></td>
             <td><b>{{$turma->turma}}</b></td>
-            <td><b>{{$turma->idprofessor->name}}</b></td>
             <td><b>{{$turma->idprofessor}}</b></td>
+            <td><b>{{$turma->professor->name}}</b></td>
             <td>
                 <form action="{{ route('turma.destroy', $turma->id) }}" method="post">
                     <a class="btn btn-sm btn-success" href="{{ route('turma.show', $turma->id) }}">Exibir</a>

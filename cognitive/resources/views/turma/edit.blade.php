@@ -48,10 +48,10 @@
             <div class="form-group col-md-3">
                 <label for="professor">Professor:</label>
                 <select class="form-control" name="idprofessor">
-                <option value="{{$turma->idprofessor}}">{{$user->name}}</option>
-                @foreach ($disciplinas as $a)
-                @if($disciplina->id != $a->id)
-                <option value="{{$a->id}}">{{$a->disciplina}}</option>
+                <option value="{{$turma->idprofessor}}">{{$turma->professor->name}}</option>
+                @foreach ($users as $u)
+                @if($turma->professor->id != $u->id)
+                <option value="{{$u->id}}">{{$u->name}}</option>
                 @endif
                 @endforeach
               </select>

@@ -37,4 +37,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Aluno()
+    {
+        return $this->belongsToMany(Turma::class, 'idaluno', 'id');
+    }
+
+    public function Professor()
+    {
+        return $this->hasOne(Turma::class, 'idprofessor', 'id');
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Turma;
 use App\Disciplina;
+use App\User;
 use Illuminate\Http\Request;
 
 class TurmaController extends Controller
@@ -32,7 +33,8 @@ class TurmaController extends Controller
     public function create()
     {
         $disciplinas = Disciplina::paginate()->sortBy('disciplina');
-        return view ('turma.create')->with('disciplinas', $disciplinas);
+        $users = User::paginate()->sortBy('name');
+        return view ('turma.create')->with('disciplinas', $disciplinas)->with('users', $users);
     }
     
     /**
@@ -45,6 +47,7 @@ class TurmaController extends Controller
     {
         $validatedData = $request->validate([
             'iddisciplina' => 'required|numeric',
+            'idprofessor' => 'required|numeric',
             'turma' => 'required',
             ]);
             
@@ -87,8 +90,9 @@ class TurmaController extends Controller
             $disciplina = Disciplina::find($turma->iddisciplina);
             
             $disciplinas = Disciplina::paginate()->sortBy('disciplina');
+            $users = User::paginate()->sortBy('name');
             
-            return view('turma.edit', compact('turma', 'disciplina'))->with('disciplinas', $disciplinas);
+            return view('turma.edit', compact('turma', 'disciplina'))->with('disciplinas', $disciplinas)->with('users', $users);
         }
         
         /**

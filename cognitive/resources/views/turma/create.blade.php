@@ -46,7 +46,7 @@
           <div class="row">
           <div class="form-group col-md-3">
                 <label for="idprofessor">Professor:</label>
-                <select class="form-control" name="idestado">
+                <select class="form-control" name="idprofessor">
                 <option>Selecione o professor</option>
                 @foreach ($users as $user)
                 <option value="{{$user->id}}">{{$user->name}}</option>

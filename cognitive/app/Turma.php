@@ -11,7 +11,7 @@ class Turma extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
     use SoftDeletes;
 
-    protected $fillable = ['idturma', 'turma', 'idaluno', 'idprofessor'];
+    protected $fillable = ['id', 'iddisciplina', 'idprofessor', 'idaluno', 'turma'];
     protected $dates = ['deleted_at'];
 
 
@@ -23,14 +23,13 @@ class Turma extends Model implements Auditable
         return $this->belongsTo(Disciplina::class,'iddisciplina','id');
     }
 
-
     public function Aluno()
     {
-        return $this->hasMany(User::class, 'iduser', 'id');
+        return $this->belongsToMany(User::class, 'idaluno', 'id');
     }
 
     public function Professor()
     {
-        return $this->hasOne(User::class, 'iduser', 'id');
+        return $this->belongsTo(User::class, 'idprofessor', 'id');
     }
 }
