@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTurmaTable extends Migration
+class CreateTurmaalunosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateTurmaTable extends Migration
      */
     public function up()
     {
-        Schema::create('turmas', function (Blueprint $table) {
+        Schema::create('turma_alunos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('iddisciplina');
-            $table->integer('idprofessor');
-            $table->string('turma',100);
+            $table->integer('idturma');
+            $table->integer('idaluno');
             $table->timestamps();
             $table->softdeletes();
         });
@@ -30,6 +29,6 @@ class CreateTurmaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('disciplinas');
+        Schema::dropIfExists('turmaalunos');
     }
 }

@@ -28,3 +28,4 @@ Route::resource('disciplina', 'DisciplinaController');
 Route::resource('estado', 'EstadoController');
 Route::resource('cidade', 'CidadeController');
 Route::resource('turma', 'TurmaController');
+Route::resource('turmaaluno', 'TurmaAlunoController');

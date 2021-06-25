@@ -99,7 +99,17 @@
         
         
         @role('aluno')
-        <p>Buscar professores</p>
+        <div class="row">
+            <div class="links">
+                <a href="">Buscar Professores</a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="links">
+                <a href="{{ route('turma.index') }}">Turmas</a>
+            </div>
+        </div>
         @endrole
         
         

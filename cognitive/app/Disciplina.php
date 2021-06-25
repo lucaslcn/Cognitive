@@ -23,9 +23,4 @@ class Disciplina extends Model implements Auditable
         return $this->belongsTo(Area::class,'idarea','id');
     }
 
-    public function Disciplina()
-    {
-        return $this->hasMany(Disciplina::class,'iddisciplina','id');
-    }
-
 }

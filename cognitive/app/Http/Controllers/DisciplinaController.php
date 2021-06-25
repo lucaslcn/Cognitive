@@ -12,7 +12,7 @@ class DisciplinaController extends Controller
     public function __construct()
     {
         //Evita que o usuário possa acessar a página através do endereço, sem estar logado
-        $this->middleware('auth');
+        $this->middleware(['auth', 'role:admin']);
     }
     
     public function index()

@@ -21,7 +21,7 @@
         <tr>
             <th><b>ID</b></th>
             <th><b>Turma</b></th>
-            <th><b>ID Professor</b></th>
+            <th><b>Disciplina</b></th>
             <th><b>Professor</b></th>
             <th><b>Ação</b></th>
         </tr>
@@ -30,16 +30,27 @@
         <tr>
             <td><b>{{$turma->id}}</b></td>
             <td><b>{{$turma->turma}}</b></td>
-            <td><b>{{$turma->idprofessor}}</b></td>
+            <td><b>{{$turma->disciplina->disciplina}}</b></td>
             <td><b>{{$turma->professor->name}}</b></td>
             <td>
+                @role('admin')
                 <form action="{{ route('turma.destroy', $turma->id) }}" method="post">
                     <a class="btn btn-sm btn-success" href="{{ route('turma.show', $turma->id) }}">Exibir</a>
                     <a class="btn btn-sm btn-warning" href="{{ route('turma.edit', $turma->id) }}">Editar</a>
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-sm btn-danger">Deletar</button>
+                    <button type="submit" class="btn btn-sm btn-danger">Deletar</button>                    
                 </form>
+                @endrole
+                @role('aluno')
+                <form action="{{ route('turmaaluno.store') }}" method="post">
+                    @csrf
+                    <input type="hidden" class="form-control" name="idturma" value="{{$turma->id}}"/>
+                    <input type="hidden" class="form-control" name="idaluno" value="{{Auth::user()->id}}"/>
+                    @method('POST')
+                    <button type="submit" class="btn btn-sm btn-primary">Participar</button>
+                </form>
+                @endrole
             </td>
         </tr>
         @endforeach
